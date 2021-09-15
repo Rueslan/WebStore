@@ -18,6 +18,7 @@
                 <th>Имя</th>
                 <th>Отчество</th>
                 <th>Возраст</th>
+                <th>Дополнительно</th>
             </tr>            
         </thead>
         <tbody>
@@ -29,6 +30,7 @@
                 <td>@employee.FirstName</td>
                 <td>@employee.Patronymic</td>
                 <td>@employee.Age</td>
+                <td><a href="/Home/CurrentEmployee?currentId=@employee.id">Инфо</a></td>
             </tr>
             }
         </tbody>
