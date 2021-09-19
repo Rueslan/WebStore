@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using WebStore.Data;
 using WebStore.Models;
 
@@ -12,6 +13,15 @@ namespace WebStore.Controllers
         {
             _Employees = TestData.Employees;
         }
+
         public IActionResult Index => View(_Employees);
+
+        public IActionResult Details(int id)
+        {
+            var employee = _Employees.SingleOrDefault(e => e.Id == id);
+            if (employee is null)
+                return NotFound();
+            return View(employee);
+        }
     }
 }

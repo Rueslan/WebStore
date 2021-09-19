@@ -11,19 +11,19 @@
                 <th>Имя</th>
                 <th>Отчество</th>
                 <th>Возраст</th>
-                <th>Дополнительно</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var employee in Model)
             {
                 <tr>
-                    <td>@employee.id</td>
+                    <td>@employee.Id</td>
                     <td>@employee.LastName</td>
                     <td>@employee.FirstName</td>
                     <td>@employee.Patronymic</td>
                     <td>@employee.Age</td>
-                    <td><a href="/Home/CurrentEmployee?currentId=@employee.id">Инфо</a></td>
+                    <td><a asp-controller="Employees" asp-action="Details" asp-route-id="@employee.Id"><i class="fa fa-info"></a></td>
                 </tr>
             }
         </tbody>
