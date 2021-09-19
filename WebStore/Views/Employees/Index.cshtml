@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebStore.Models.Employee>
+
+<div class="container">
+    <h3>Сотрудники</h3>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Возраст</th>
+                <th>Дополнительно</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.id</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.Patronymic</td>
+                    <td>@employee.Age</td>
+                    <td><a href="/Home/CurrentEmployee?currentId=@employee.id">Инфо</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-default">Домой</a>
+    </p>
+</div>
