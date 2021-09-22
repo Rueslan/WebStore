@@ -14,7 +14,7 @@ namespace WebStore.Controllers
             _Employees = TestData.Employees;
         }
 
-        public IActionResult Index => View(_Employees);
+        public IActionResult Index() => View(_Employees);
 
         public IActionResult Details(int id)
         {
